@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policies — Our Android Apps</title>
+  <meta name="description" content="Privacy policies for our Android apps published on Google Play, including Ciphora." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">🔒 App Privacy Center</div>
+      <p class="tagline">Simple, honest privacy policies for our Play Store apps.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card intro">
+      <h1>Privacy Policies</h1>
+      <p>
+        This site hosts the privacy policies for our Android apps published on
+        Google Play. Each app below links to its own policy. This page itself
+        collects no data — it is a static site hosted on GitHub Pages.
+      </p>
+    </section>
+
+    <section class="app-grid">
+      <!-- Ciphora -->
+      <article class="card app-card featured">
+        <div class="app-icon">C</div>
+        <div>
+          <h2>Ciphora — Private Encrypted Notes</h2>
+          <p class="meta">Package: <code>com.ciphora.app</code> · Local-only · No accounts · No ads · No tracking</p>
+          <p>
+            A local-only encrypted note-taking app. Your notes stay on your device,
+            locked with your password. No cloud, no accounts, no analytics.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="ciphora/">Read Privacy Policy</a>
+            <a class="btn" href="ciphora/#data-safety">Data Safety Summary</a>
+          </div>
+          <p class="updated">Effective: September 25, 2026</p>
+        </div>
+      </article>
+
+      <!-- Template for future apps: copy this block, change name/slug/description -->
+      <!--
+      <article class="card app-card">
+        <div class="app-icon">A</div>
+        <div>
+          <h2>Your Next App</h2>
+          <p class="meta">Package: com.example.app</p>
+          <p>Short one-line description.</p>
+          <div class="actions">
+            <a class="btn primary" href="your-app-slug/">Read Privacy Policy</a>
+          </div>
+        </div>
+      </article>
+      -->
+    </section>
+
+    <section class="card">
+      <h2>How to add a new app</h2>
+      <ol>
+        <li>Copy <code>_template/</code> to a new folder, e.g. <code>my-new-app/</code>.</li>
+        <li>Edit the policy HTML inside it.</li>
+        <li>Add a card above linking to <code>my-new-app/</code>.</li>
+        <li>Commit &amp; push — GitHub Pages updates automatically.</li>
+      </ol>
+      <p class="muted">See <a href="https://github.com/">README</a> in this repo for full publishing steps.</p>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 · Static site. No cookies, no analytics, no tracking on this site.</p>
+    </footer>
+  </main>
+</body>
+</html>

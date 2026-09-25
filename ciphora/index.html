@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Ciphora</title>
+  <meta name="description" content="Privacy Policy for Ciphora, a local-only encrypted note-taking app for Android. No accounts, no cloud, no tracking." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>" />
+</head>
+<body>
+  <header class="site-header policy-header">
+    <div class="container">
+      <div class="brand">🔒 Ciphora</div>
+      <p class="tagline">Private encrypted notes · Local-only vault</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../">← All apps</a>
+
+    <article class="card">
+      <h1>Privacy Policy for Ciphora</h1>
+      <div class="policy-meta">
+        <span><strong>App:</strong> Ciphora — Private Encrypted Notes</span>
+        <span><strong>Package:</strong> <code>com.ciphora.app</code></span>
+        <span><strong>Effective date:</strong> September 25, 2026</span>
+        <span><strong>Last updated:</strong> September 25, 2026</span>
+      </div>
+      <p>
+        <span class="badge">No accounts</span>
+        <span class="badge">No cloud</span>
+        <span class="badge">No ads</span>
+        <span class="badge">No analytics</span>
+        <span class="badge">No internet access</span>
+      </p>
+
+      <div class="highlight">
+        <strong>Short version:</strong> Ciphora works fully offline. Your notes never leave
+        your device unless <em>you</em> export or share them. We do not collect, transmit,
+        sell, or see any of your personal data or note contents — because the app has no
+        network access and no servers.
+      </div>
+
+      <nav class="toc">
+        <strong>Contents</strong>
+        <ol>
+          <li><a href="#who">Who we are</a></li>
+          <li><a href="#scope">Scope of this policy</a></li>
+          <li><a href="#collect">Data we collect — none</a></li>
+          <li><a href="#stored">What is stored on your device</a></li>
+          <li><a href="#encryption">How your notes are protected</a></li>
+          <li><a href="#permissions">Permissions</a></li>
+          <li><a href="#backup">Backups, export &amp; sharing (you control)</a></li>
+          <li><a href="#third">Third parties, SDKs &amp; tracking</a></li>
+          <li><a href="#data-safety">Google Play Data Safety summary</a></li>
+          <li><a href="#children">Children's privacy</a></li>
+          <li><a href="#retention">Retention &amp; deletion</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#rights">Your rights</a></li>
+          <li><a href="#changes">Changes to this policy</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="who">1. Who we are</h2>
+      <p>
+        Ciphora (“the App”) is an Android note-taking app published on Google Play
+        under package name <code>com.ciphora.app</code>. The developer operates no
+        servers for this app and provides no cloud sync service.
+      </p>
+
+      <h2 id="scope">2. Scope of this policy</h2>
+      <p>
+        This policy covers the Ciphora Android app only. It does not cover:
+      </p>
+      <ul>
+        <li>This GitHub Pages website itself (a static site that collects nothing).</li>
+        <li>Any third-party app or service you choose to share an exported backup with (e.g. a file manager, cloud drive, messenger) — their policies apply once you share a file with them.</li>
+      </ul>
+
+      <h2 id="collect">3. Data we collect — none</h2>
+      <p>We do not collect, transmit, or have access to:</p>
+      <ul>
+        <li>Note titles, contents, checklists, labels, colors, or attachments</li>
+        <li>Your lock password or encryption keys</li>
+        <li>Names, email addresses, phone numbers, or account identifiers</li>
+        <li>Location, contacts, photos, or device identifiers</li>
+        <li>Usage analytics, crash reports, or advertising identifiers</li>
+      </ul>
+      <p>
+        The App declares <strong>no <code>INTERNET</code> permission</strong> in its
+        Android manifest, so it technically cannot send data over the network.
+        There are no accounts, no sign-in, no servers, and no analytics SDKs
+        (verified: no Firebase, Crashlytics, ads, or tracking libraries).
+      </p>
+
+      <h2 id="stored">4. What is stored on your device</h2>
+      <p>Everything you create stays in the App’s private on-device storage:</p>
+      <table>
+        <tr><th>Data</th><th>Where</th><th>Notes</th></tr>
+        <tr><td>Notes, checklists, labels, archive / trash state</td><td>Encrypted SQLite database (<code>ciphora.db</code>) in app-private storage</td><td>Only readable when you unlock with your password</td></tr>
+        <tr><td>Vault metadata (salt, unlock verification data)</td><td>App-private storage</td><td>Used to verify your password; password itself is never stored</td></tr>
+        <tr><td>Backup files you export (<code>.tknbackup</code>)</td><td>Location you choose / share target you pick</td><td>Encrypted; you control where they go</td></tr>
+      </table>
+      <p>Uninstalling the App deletes the app-private database. Exported backup files stored outside the App (e.g. Downloads, Drive) are not deleted automatically — delete them yourself.</p>
+
+      <h2 id="encryption">5. How your notes are protected</h2>
+      <ul>
+        <li><strong>Database encryption:</strong> notes are stored in a SQLCipher-encrypted SQLite database, unlocked with a key derived from your lock password.</li>
+        <li><strong>Key derivation:</strong> Argon2id (memory 19456 KiB, 2 iterations, 1 lane) derives a 256-bit key from your password + random 16-byte salt.</li>
+        <li><strong>Backup encryption:</strong> exports are AES-256-GCM encrypted payloads (fresh salt + nonce per export). They can only be restored with the same password.</li>
+        <li><strong>Password handling:</strong> your password is never stored. If you forget it, neither we nor anyone else can recover your notes — this is by design.</li>
+      </ul>
+      <div class="warning">
+        <strong>Important:</strong> keep your password and at least one encrypted backup in a safe place.
+        Forgetting your password means permanent loss of access to your notes.
+      </div>
+
+      <h2 id="permissions">6. Permissions</h2>
+      <table>
+        <tr><th>Permission</th><th>Requested?</th><th>Purpose</th></tr>
+        <tr><td>Internet (<code>INTERNET</code>)</td><td><strong>No</strong></td><td>App works fully offline</td></tr>
+        <tr><td>Storage / Photos / Media</td><td><strong>No broad permission</strong></td><td>Backup import/export uses the system file picker (Storage Access Framework) — you pick specific files; the App gets access only to files you select</td></tr>
+        <tr><td>Camera, Microphone, Location, Contacts</td><td><strong>No</strong></td><td>Not used</td></tr>
+      </table>
+
+      <h2 id="backup">7. Backups, export &amp; sharing (you control)</h2>
+      <ul>
+        <li>Backup / restore is <strong>manual and user-initiated only</strong>. Nothing is uploaded automatically.</li>
+        <li>Exports create an encrypted <code>.tknbackup</code> file you can save or share via the Android share sheet.</li>
+        <li>If you share a backup to another app (email, Drive, messenger), that copy is governed by that app/service. Keep backups private — anyone with the file <em>and</em> your password can read them.</li>
+      </ul>
+
+      <h2 id="third">8. Third parties, SDKs &amp; tracking</h2>
+      <ul>
+        <li><strong>No third-party SDKs that collect data.</strong> No ads, no analytics, no social logins, no crash-reporting services.</li>
+        <li><strong>No data sharing or selling.</strong> There is nothing to share because nothing is collected.</li>
+        <li>Open-source Flutter packages used (e.g. database, encryption, rich-text editor) all run on-device.</li>
+      </ul>
+
+      <h2 id="data-safety">9. Google Play Data Safety summary</h2>
+      <table>
+        <tr><th>Question</th><th>Answer for Ciphora</th></tr>
+        <tr><td>Does the app collect or share any user data?</td><td><strong>No.</strong> No data is collected, transmitted, or shared with the developer or third parties.</td></tr>
+        <tr><td>Is data encrypted in transit?</td><td>Not applicable — no network transmission. User-exported backups are AES-256-GCM encrypted at rest.</td></tr>
+        <tr><td>Is data encrypted at rest?</td><td><strong>Yes</strong> — SQLCipher database + encrypted backup files.</td></tr>
+        <tr><td>Can users request data deletion?</td><td><strong>Yes</strong> — delete notes in-app (Trash → Delete forever) or uninstall. No server-side data exists to delete.</td></tr>
+        <tr><td>Independent security review?</td><td>No.</td></tr>
+      </table>
+
+      <h2 id="children">10. Children's privacy</h2>
+      <p>
+        Ciphora does not collect personal information from anyone, including children under 13.
+        Because all data stays on-device, there is no child data for us to access or process.
+      </p>
+
+      <h2 id="retention">11. Retention &amp; deletion</h2>
+      <ul>
+        <li>Notes persist on your device until you delete them.</li>
+        <li>“Move to trash” → “Delete forever” permanently removes a note from the database.</li>
+        <li>Uninstalling the App removes the encrypted database and vault metadata from app-private storage.</li>
+        <li>We retain nothing because we receive nothing.</li>
+      </ul>
+
+      <h2 id="security">12. Security</h2>
+      <p>
+        We use modern, peer-reviewed primitives (Argon2id, AES-256-GCM, SQLCipher) and request
+        no network access to minimise attack surface. However, no software is perfectly secure.
+        Protect your device (screen lock, OS updates) and choose a strong, unique password for best protection.
+      </p>
+
+      <h2 id="rights">13. Your rights</h2>
+      <p>
+        Since we hold no personal data about you, there is nothing to access, correct, or port from our side.
+        You have full control on-device: view, edit, export, and permanently delete your notes at any time.
+        For questions, contact us below.
+      </p>
+
+      <h2 id="changes">14. Changes to this policy</h2>
+      <p>
+        If the App’s privacy behavior ever changes (e.g. optional sync is added), this policy will be
+        updated and the “Last updated” date revised. Material changes will also be noted in the Play Store listing.
+        Continued use after an update constitutes acceptance.
+      </p>
+
+      <h2 id="contact">15. Contact</h2>
+      <p>
+        Developer contact for privacy questions / deletion requests:<br />
+        📧 Email: <a href="mailto:techikrish95@gmail.com">techikrish95@gmail.com</a><br />
+        📦 App: Ciphora (<code>com.ciphora.app</code>)
+      </p>
+    </article>
+
+    <footer class="footer">
+      <p><a href="../">← Back to all apps</a> · © 2026 · Ciphora Privacy Policy</p>
+    </footer>
+  </main>
+</body>
+</html>
