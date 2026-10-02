@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Skivon</title>
+  <meta name="description" content="Privacy Policy for Skivon, a free no-ads weather app for Android. No accounts, no analytics, no tracking. Location is optional and only used to fetch your local forecast." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/theme-sky.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌤️</text></svg>" />
+</head>
+<body class="sky-theme">
+  <header class="site-header policy-header">
+    <div class="container">
+      <div class="brand">🌤️ Skivon</div>
+      <p class="tagline">Beautiful weather, free · Live forecasts · Rain outlook · Home-screen widget</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="../">← All apps</a>
+
+    <article class="card">
+      <h1>Privacy Policy for Skivon</h1>
+      <div class="policy-meta">
+        <span><strong>App:</strong> Skivon — Weather</span>
+        <span><strong>Package:</strong> <code>com.skivon.skivon</code></span>
+        <span><strong>Effective date:</strong> October 2, 2026</span>
+        <span><strong>Last updated:</strong> October 2, 2026</span>
+      </div>
+      <p>
+        <span class="badge">No accounts</span>
+        <span class="badge">No ads</span>
+        <span class="badge">No analytics</span>
+        <span class="badge">No tracking</span>
+        <span class="badge">No ad ID</span>
+        <span class="badge">Location optional</span>
+        <span class="badge">No developer servers</span>
+      </p>
+
+      <div class="highlight">
+        <strong>Short version:</strong> Skivon has no servers, no sign-in and no tracking.
+        The app talks straight from your phone to the free
+        <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>
+        weather API to fetch forecasts, and your saved cities, preferences and cached
+        forecasts never leave your device. If you tap “use my location”, your
+        city-level coordinates go to Open-Meteo and nowhere else — the developer never
+        receives them. Decline the location permission and the app still works
+        completely: just search for a city by name.
+      </div>
+
+      <nav class="toc">
+        <strong>Contents</strong>
+        <ol>
+          <li><a href="#who">Who we are</a></li>
+          <li><a href="#scope">Scope of this policy</a></li>
+          <li><a href="#never">What we never collect</a></li>
+          <li><a href="#network">What the app sends, and to whom</a></li>
+          <li><a href="#location">Location, in detail</a></li>
+          <li><a href="#permissions">Permissions</a></li>
+          <li><a href="#stored">What is stored on your device</a></li>
+          <li><a href="#third">Third parties, SDKs &amp; tracking</a></li>
+          <li><a href="#background">Background refresh &amp; home-screen widget</a></li>
+          <li><a href="#data-safety">Google Play Data Safety summary</a></li>
+          <li><a href="#children">Children's privacy</a></li>
+          <li><a href="#retention">Retention &amp; deletion</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#rights">Your rights &amp; choices</a></li>
+          <li><a href="#changes">Changes to this policy</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="who">1. Who we are</h2>
+      <p>
+        Skivon (“the App”) is a free Android weather app published on Google Play under
+        package name <code>com.skivon.skivon</code>. The App is published by an individual
+        developer, not a company. The developer operates <strong>no backend servers</strong>
+        for Skivon: there is no account system, no cloud sync, no user database and no
+        advertising network.
+      </p>
+
+      <h2 id="scope">2. Scope of this policy</h2>
+      <p>This policy covers the Skivon Android app and the home-screen widget it provides. It does not cover:</p>
+      <ul>
+        <li><strong>This website</strong> — a static GitHub Pages site that sets no cookies, runs no scripts and collects nothing.</li>
+        <li><strong>Open-Meteo</strong>, which serves the forecast data. Its own <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">Terms &amp; Privacy</a> apply to data it receives; the relevant points are summarised in section 8.</li>
+        <li><strong>Google Play</strong> and your device's operating system, which handle installation, billing-free distribution and permissions outside our control.</li>
+      </ul>
+
+      <h2 id="never">3. What we never collect</h2>
+      <p>We do not collect, transmit, sell, rent or have access to any of the following:</p>
+      <ul>
+        <li>Names, email addresses, phone numbers, or any account identifier — there is no way to identify you</li>
+        <li>Your saved city list, city search history, or unit/theme preferences</li>
+        <li>Advertising ID, device fingerprint, IMEI, serial number, or any hardware identifier</li>
+        <li>Usage analytics, session recordings, crash reports, or diagnostic traces</li>
+        <li>Contacts, photos, media files, microphone input, or the camera</li>
+        <li>Your location history or movement trail — a position is read only at the moment you ask for it and is never stored or logged by us</li>
+      </ul>
+      <p>
+        There are no advertising, analytics, attribution or crash-reporting SDKs in the App
+        (no Firebase, no Crashlytics, no ad networks, no trackers), and the App contains no
+        tracking code of any kind.
+      </p>
+
+      <h2 id="network">4. What the app sends, and to whom</h2>
+      <p>
+        Skivon makes every network request directly from your device. Nothing is routed
+        through the developer. All requests use HTTPS (TLS).
+      </p>
+      <table>
+        <thead><tr><th>Request</th><th>When it happens</th><th>What is sent</th><th>Recipient</th></tr></thead>
+        <tbody>
+        <tr>
+          <td data-label="Request">Forecast<br /><code>api.open-meteo.com/v1/forecast</code></td>
+          <td data-label="When it happens">When you open the app, pull to refresh, add a city, or a background refresh runs</td>
+          <td data-label="What is sent"><code>latitude</code>, <code>longitude</code> (city-level), the list of weather variables requested, and <code>timezone=auto</code></td>
+          <td data-label="Recipient">Open-Meteo (OpenMeteo GmbH, Switzerland)</td>
+        </tr>
+        <tr>
+          <td data-label="Request">City search<br /><code>geocoding-api.open-meteo.com/v1/search</code></td>
+          <td data-label="When it happens">Only when you type a city name in the search box</td>
+          <td data-label="What is sent">The text you typed (e.g. “Pune”)</td>
+          <td data-label="Recipient">Open-Meteo</td>
+        </tr>
+        <tr>
+          <td data-label="Request">Air quality<br /><code>air-quality-api.open-meteo.com/v1/air-quality</code></td>
+          <td data-label="When it happens">Alongside the forecast, for the same place</td>
+          <td data-label="What is sent"><code>latitude</code>, <code>longitude</code></td>
+          <td data-label="Recipient">Open-Meteo</td>
+        </tr>
+        <tr>
+          <td data-label="Request">App font<br /><code>fonts.googleapis.com</code></td>
+          <td data-label="When it happens">Once, the first time the app needs the “Outfit” typeface</td>
+          <td data-label="What is sent">Ordinary web-request metadata (your IP address and user-agent string)</td>
+          <td data-label="Recipient">Google Fonts</td>
+        </tr>
+      </tbody>
+      </table>
+      <p>
+        No API keys, tokens, user identifiers or analytics parameters are included in any
+        request — there is nothing that identifies you as a Skivon user.
+      </p>
+
+      <h2 id="location">5. Location, in detail</h2>
+      <ul>
+        <li><strong>Optional.</strong> Location is only used if you tap “use my location” (or otherwise ask for your current position). The permission dialog appears at that moment, never on launch.</li>
+        <li><strong>City-level accuracy only.</strong> Skivon explicitly requests a <em>low-accuracy</em> fix — the kind a cell tower or Wi-Fi network provides, typically accurate to a kilometre or more. A street-precise GPS trace is never requested or captured.</li>
+        <li><strong>Sent once, to one place.</strong> The coordinates go into the URL of the Open-Meteo request described in section 4. They are not sent to the developer, not attached to your saved cities, and not used for advertising or profiling.</li>
+        <li><strong>Not saved as a location.</strong> The result is converted into a city entry (name, country, coordinates) that you can see, rename, reorder and delete at any time from the saved-cities screen.</li>
+        <li><strong>No history.</strong> Skivon does not record where you have been or track your movement over time.</li>
+        <li><strong>Approximate is fine.</strong> On Android 12 and newer you can grant “approximate” location only, and Skivon works exactly as well.</li>
+        <li><strong>Refusing is fine too.</strong> Deny the permission and the app remains fully functional — search for a city by name instead. Nothing is degraded except the one-tap “current location” shortcut.</li>
+      </ul>
+      <p>
+        To withdraw location access: <strong>Settings → Apps → Skivon → Permissions →
+        Location → Don’t allow</strong>. The app then stops reading position entirely and
+        shows your saved cities only.
+      </p>
+
+      <h2 id="permissions">6. Permissions</h2>
+      <table>
+        <thead><tr><th>Permission</th><th>Requested?</th><th>Purpose</th></tr></thead>
+        <tbody>
+        <tr>
+          <td data-label="Permission">Internet (<code>INTERNET</code>)</td>
+          <td data-label="Requested?"><strong>Yes</strong></td>
+          <td data-label="Purpose">Fetching forecasts, air quality and city search results from Open-Meteo. A weather app cannot work offline for live data.</td>
+        </tr>
+        <tr>
+          <td data-label="Permission">Location — coarse<br /><code>ACCESS_COARSE_LOCATION</code></td>
+          <td data-label="Requested?"><strong>Yes, optional</strong></td>
+          <td data-label="Purpose">Getting an approximate position for the “use my location” feature.</td>
+        </tr>
+        <tr>
+          <td data-label="Permission">Location — fine<br /><code>ACCESS_FINE_LOCATION</code></td>
+          <td data-label="Requested?"><strong>Yes, optional</strong></td>
+          <td data-label="Purpose">Declared because the location plugin supports it, but the app always requests <em>low</em> accuracy. Declaring it does not mean it is used at GPS precision.</td>
+        </tr>
+        <tr>
+          <td data-label="Permission">Camera, microphone, contacts, photos/media, storage, phone, SMS, notifications</td>
+          <td data-label="Requested?"><strong>No</strong></td>
+          <td data-label="Purpose">Not used. The App has no feature that needs them.</td>
+        </tr>
+      </tbody>
+      </table>
+      <p>No background location, no “always on” location, and no location access from a background task.</p>
+
+      <h2 id="stored">7. What is stored on your device</h2>
+      <p>Everything Skivon remembers lives in your app's private storage, readable only by Skivon:</p>
+      <table>
+        <thead><tr><th>Data</th><th>Where</th><th>Notes</th></tr></thead>
+        <tbody>
+        <tr><td data-label="Data">Saved cities (name, country, region, latitude, longitude) and the selected city</td><td data-label="Where">App-private preferences storage (<code>saved_cities_v1</code>, <code>active_city_id_v1</code>)</td><td data-label="Notes">Only what you added. Remove a city to erase it.</td></tr>
+        <tr><td data-label="Data">Cached forecast JSON per city, with a timestamp</td><td data-label="Where">App-private preferences storage (<code>weather_cache_&lt;city&gt;</code>)</td><td data-label="Notes">Expires after <strong>90 minutes</strong> and is overwritten on every successful refresh. Lets the app open instantly and stay useful on a bad connection.</td></tr>
+        <tr><td data-label="Data">Preferences: temperature unit, wind unit, 12/24-hour clock, background theme</td><td data-label="Where">App-private preferences storage</td><td data-label="Notes">Never transmitted anywhere.</td></tr>
+        <tr><td data-label="Data">Widget values: city name, temperature, condition, day/night flag, high/low</td><td data-label="Where">Android home-screen widget storage (app group <code>group.skivon</code>)</td><td data-label="Notes">Visible on your home screen only. Removed when you remove the widget or uninstall.</td></tr>
+      </tbody>
+      </table>
+      <p>
+        Uninstalling the App or using <strong>Settings → Apps → Skivon → Storage → Clear
+        storage</strong> deletes all of it. Skivon cannot read your saved cities, your
+        cached forecasts, or any file on your device — it has no permission to do so.
+      </p>
+
+      <h2 id="third">8. Third parties, SDKs &amp; tracking</h2>
+      <h3>Open-Meteo (weather data)</h3>
+      <p>
+        Skivon uses the free, open-source, no-API-key
+        <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>
+        API (data licensed CC BY 4.0). Your device contacts it directly. According to
+        Open-Meteo's published privacy terms, for its free non-commercial service it may
+        collect non-personal technical information such as IP addresses to prevent misuse,
+        not linked to any user identity; web-server log files — which can contain the
+        coordinates you request — are kept only for troubleshooting, are never shared with
+        third parties, and are <strong>deleted after 90 days</strong>. Open-Meteo states
+        it uses no cookies, no tracking and no advertising.
+      </p>
+      <h3>Google Fonts (app typeface)</h3>
+      <p>
+        The Outfit typeface is loaded at runtime from Google's font service and then cached
+        on your device. That request reveals your IP address to Google as any website
+        request would. No Skivon data, identifier or analytics parameter is included.
+      </p>
+      <h3>Open-source libraries (all on-device)</h3>
+      <p>
+        Skivon is built with Flutter and uses open-source packages for networking
+        (<code>http</code>), location (<code>geolocator</code>), local preferences
+        (<code>shared_preferences</code>), the home-screen widget
+        (<code>home_widget</code>, <code>workmanager</code>), state
+        (<code>provider</code>) and formatting (<code>intl</code>). These libraries run
+        entirely on your device. None of them contain an analytics or tracking component,
+        and there are no advertising, attribution or fingerprinting SDKs in the App.
+      </p>
+
+      <h2 id="background">9. Background refresh &amp; home-screen widget</h2>
+      <ul>
+        <li>
+          <strong>Every ~30 minutes</strong>, when the device is connected to a network,
+          Android may run a background refresh so your widget stays current. This refresh
+          uses the <em>stored coordinates of your selected city</em>.
+        </li>
+        <li>
+          <strong>The background refresh never touches GPS or the location permission.</strong>
+          It cannot discover where you are — only the place you already saved.
+        </li>
+        <li>No notification is posted and nothing is uploaded anywhere else.</li>
+      </ul>
+
+      <h2 id="data-safety">10. Google Play Data Safety summary</h2>
+      <p>
+        Play requires apps to declare data that leaves the device. Skivon is honest about
+        the one category that qualifies:
+      </p>
+      <table>
+        <thead><tr><th>Question</th><th>Answer for Skivon</th></tr></thead>
+        <tbody>
+        <tr>
+          <td data-label="Question">Does the app collect or share user data?</td>
+          <td data-label="Answer for Skivon">
+            <strong>Yes — approximate location,</strong> and only for the single purpose of
+            requesting the forecast for your selected place. It is sent from your device to
+            Open-Meteo. <strong>The developer does not collect or receive it.</strong>
+            Nothing else is collected: no personal info, no financial info, no health, no
+            messages, no photos, no app activity, no device or advertising IDs, no
+            diagnostics or crash logs.
+          </td>
+        </tr>
+        <tr><td data-label="Question">Data type and purpose</td><td data-label="Answer for Skivon"><strong>Location → Approximate location</strong>, used for <strong>App functionality</strong> (the weather forecast).</td></tr>
+        <tr><td data-label="Question">Shared with</td><td data-label="Answer for Skivon"><strong>Third party:</strong> Open-Meteo, the open-data provider that returns the forecast. No sharing with advertisers, brokers or data brokers.</td></tr>
+        <tr><td data-label="Question">Optional?</td><td data-label="Answer for Skivon"><strong>Yes.</strong> Refusing the location permission leaves the app fully usable via manual city search.</td></tr>
+        <tr><td data-label="Question">Is the data encrypted in transit?</td><td data-label="Answer for Skivon"><strong>Yes</strong> — every request uses HTTPS/TLS.</td></tr>
+        <tr><td data-label="Question">Is data encrypted at rest?</td><td data-label="Answer for Skivon">Not by us: the cache lives in Android's app-private sandbox (unreadable by other apps). Device encryption by Android applies to it.</td></tr>
+        <tr><td data-label="Question">Can users request deletion?</td><td data-label="Answer for Skivon"><strong>Yes</strong> — remove the city in-app, clear app storage, or uninstall. The developer holds no server-side copy to delete. Open-Meteo deletes its request logs within 90 days per its published terms.</td></tr>
+        <tr><td data-label="Question">Independent security review?</td><td data-label="Answer for Skivon">No.</td></tr>
+      </tbody>
+      </table>
+
+      <h2 id="children">11. Children's privacy</h2>
+      <p>
+        Skivon is a general-audience utility and is not directed at children under 13 (or
+        the applicable minimum age in your region). Because the App has no accounts and
+        the developer holds no personal data about anyone, no child information is
+        knowingly collected, stored, or shared. If you believe a minor has used the App,
+        contact us and we will help — there is nothing for us to hand over, because we hold
+        no data.
+      </p>
+
+      <h2 id="retention">12. Retention &amp; deletion</h2>
+      <ul>
+        <li>Saved cities and preferences persist on your device until you remove them or uninstall.</li>
+        <li>The forecast cache is discarded after 90 minutes and overwritten on each refresh.</li>
+        <li>Removing a city from the saved-cities screen deletes its entry and cache.</li>
+        <li>Uninstalling the App removes all app-private storage and the widget data.</li>
+        <li>We retain nothing about you because we never receive anything about you.</li>
+      </ul>
+
+      <h2 id="security">13. Security</h2>
+      <p>
+        All network traffic is encrypted with HTTPS, the App keeps its data in Android's
+        private sandbox, and it requests the minimum permissions it needs. As with any
+        software, a rooted or compromised device, or a malicious network, can defeat these
+        protections. Keep your device updated and use a screen lock.
+      </p>
+
+      <h2 id="rights">14. Your rights &amp; choices</h2>
+      <p>
+        Because no personal data is held by the developer, there is nothing for us to
+        disclose, correct, export or erase on our side. You stay in full control on your
+        device: add or delete cities at any time, refuse or revoke the location permission
+        at any time, and remove everything by clearing storage or uninstalling. If you want
+        Open-Meteo to no longer process requests from your IP, their contact details are in
+        section 8 and in their own privacy terms.
+      </p>
+
+      <h2 id="changes">15. Changes to this policy</h2>
+      <p>
+        If Skivon's privacy behaviour ever changes — for example if a server, an account
+        system or an analytics SDK were ever introduced — this page will be updated and the
+        “Last updated” date revised, and material changes will be noted in the Play Store
+        listing. Continued use of the App after an update means you accept the revised
+        policy.
+      </p>
+
+      <h2 id="contact">16. Contact</h2>
+      <p>
+        Developer contact for privacy questions, complaints or deletion requests:<br />
+        📧 Email: <a href="mailto:techikrish95@gmail.com">techikrish95@gmail.com</a><br />
+        📦 App: Skivon — Weather (<code>com.skivon.skivon</code>)<br />
+        🌦️ Weather &amp; air-quality data: <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">Open-Meteo</a> (OpenMeteo GmbH, Switzerland)
+      </p>
+    </article>
+
+    <footer class="footer">
+      <p><a href="../">← Back to all apps</a> · © 2026 · Skivon Privacy Policy · Weather data by Open-Meteo</p>
+    </footer>
+  </main>
+</body>
+</html>

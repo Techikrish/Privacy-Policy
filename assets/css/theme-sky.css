@@ -1,0 +1,153 @@
+/* Dark-sky theme — opt-in per page with <body class="sky-theme">.
+   Mirrors the Skivon app UI: deep navy skies, glass surfaces, light-blue accents.
+   Loaded AFTER style.css, so it only overrides — style.css stays untouched for other apps. */
+
+.sky-theme {
+  --bg: #060B26;
+  --card: rgba(255, 255, 255, 0.045);
+  --ink: #EDF2FF;
+  --muted: #9BA9C9;
+  --border: rgba(255, 255, 255, 0.11);
+  --accent: #82B1FF;
+  --accent-ink: #06102A;
+  --radius: 18px;
+}
+
+/* --- Sky backdrop: gradient + drifting star field + two soft glows --- */
+body.sky-theme {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(1100px 620px at 82% -8%, rgba(56, 120, 255, 0.30), transparent 60%),
+    radial-gradient(900px 560px at 10% 105%, rgba(99, 60, 220, 0.28), transparent 62%),
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.55) 1px, transparent 1.6px),
+    radial-gradient(circle at 63% 11%, rgba(255, 255, 255, 0.40) 1px, transparent 1.6px),
+    radial-gradient(circle at 84% 47%, rgba(255, 255, 255, 0.32) 1px, transparent 1.6px),
+    radial-gradient(circle at 37% 63%, rgba(255, 255, 255, 0.28) 1px, transparent 1.6px),
+    linear-gradient(180deg, #070C24 0%, #0B1435 45%, #060B26 100%);
+  background-size: 100% 100%, 100% 100%, 340px 340px, 340px 340px, 340px 340px, 340px 340px, 100% 100%;
+  background-attachment: fixed;
+  animation: skivon-drift 140s linear infinite alternate;
+}
+
+@keyframes skivon-drift {
+  from { background-position: 0 0, 0 0, 0 0, 68px 0, 34px 52px, 96px 24px, 0 0; }
+  to   { background-position: 0 0, 0 0, 0 120px, 68px 120px, 34px 172px, 96px 144px, 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.sky-theme { animation: none; }
+}
+
+.sky-theme ::selection { background: rgba(130, 177, 255, 0.32); }
+
+/* --- Header --- */
+.sky-theme .site-header {
+  background: linear-gradient(135deg, #16255C 0%, #2B3A8F 45%, #4C3BCF 100%);
+  box-shadow: 0 12px 40px rgba(4, 8, 24, 0.55);
+}
+.sky-theme .tagline { opacity: 0.85; }
+
+/* --- Glass surfaces --- */
+.sky-theme .card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 14px 40px rgba(3, 7, 22, 0.45);
+}
+.sky-theme .featured { border-left: 5px solid var(--accent); }
+.sky-theme a { color: var(--accent); }
+
+/* --- Typography bits --- */
+.sky-theme code,
+.sky-theme .meta code {
+  background: rgba(130, 177, 255, 0.14);
+  color: #CFE0FF;
+  border: 1px solid rgba(130, 177, 255, 0.18);
+  overflow-wrap: break-word;
+}
+.sky-theme .badge {
+  background: rgba(130, 177, 255, 0.13);
+  color: #BBD4FF;
+  border: 1px solid rgba(130, 177, 255, 0.28);
+}
+.sky-theme hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 26px 0;
+}
+
+/* --- Tables --- */
+.sky-theme th, .sky-theme td { border-bottom: 1px solid var(--border); }
+.sky-theme th { background: rgba(255, 255, 255, 0.05); color: #DCE6FF; }
+.sky-theme tbody tr:hover { background: rgba(255, 255, 255, 0.03); }
+
+/* --- Callouts --- */
+.sky-theme .toc {
+  background: rgba(130, 177, 255, 0.07);
+  border: 1px solid rgba(130, 177, 255, 0.22);
+}
+.sky-theme .toc a { text-decoration: none; border-bottom: 1px dotted rgba(130, 177, 255, 0.45); }
+.sky-theme .toc a:hover { border-bottom-style: solid; }
+
+.sky-theme .highlight {
+  background: rgba(56, 189, 248, 0.10);
+  border: 1px solid rgba(56, 189, 248, 0.30);
+}
+.sky-theme .warning {
+  background: rgba(251, 191, 36, 0.09);
+  border: 1px solid rgba(251, 191, 36, 0.28);
+}
+.sky-theme .sunrise {
+  background: rgba(251, 146, 60, 0.10);
+  border: 1px solid rgba(251, 146, 60, 0.30);
+}
+
+/* --- Buttons / icons --- */
+.sky-theme .btn {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ink);
+  border-color: var(--border);
+}
+.sky-theme .btn.primary {
+  background: linear-gradient(135deg, #82B1FF, #6C8BFF);
+  color: var(--accent-ink);
+  border-color: transparent;
+}
+.sky-theme .app-icon {
+  background: linear-gradient(140deg, rgba(56, 120, 255, 0.35), rgba(99, 60, 220, 0.35));
+  color: #EAF1FF;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* --- Tables: stack into labelled cards on narrow screens (needs data-label on each <td>) --- */
+@media (max-width: 640px) {
+  .sky-theme table,
+  .sky-theme tbody,
+  .sky-theme tr,
+  .sky-theme td { display: block; width: 100%; }
+  .sky-theme thead { display: none; }
+  .sky-theme table { font-size: .92em; }
+  .sky-theme tr {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.035);
+    padding: 10px 12px;
+    margin-bottom: 12px;
+  }
+  .sky-theme td {
+    border: 0;
+    padding: 2px 0 10px;
+    display: block;
+  }
+  .sky-theme td::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--muted);
+    font-weight: 700;
+    font-size: .8em;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+}
